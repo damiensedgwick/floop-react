@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.3
+
+### Patch Changes
+
+- ab5aaf3: added README.md
+
 ## 0.0.2
 
 ### Patch Changes

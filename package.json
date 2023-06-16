@@ -1,28 +1,18 @@
 {
-  "name": "@feedback-loop/react-widget",
+  "name": "my-package",
+  "license": "MIT",
   "version": "0.0.1",
-  "description": "The form widget for Floop",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.tsx --format cjs,esm --dts",
+    "build": "tsup index.ts --format cjs,esm --dts",
     "release": "pnpm run build && changeset publish",
     "lint": "tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/damiensedgwick/floop-widget.git"
-  },
-  "author": "Damien Sedgwick",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/damiensedgwick/floop-widget/issues"
-  },
-  "homepage": "https://github.com/damiensedgwick/floop-widget#readme",
   "devDependencies": {
-    "typescript": "^5.1.3",
     "@changesets/cli": "^2.26.0",
-    "tsup": "^6.5.0"
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
   }
 }

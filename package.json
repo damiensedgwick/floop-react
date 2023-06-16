@@ -1,0 +1,18 @@
+{
+  "name": "@feedback-loop/react-widget",
+  "version": "0.0.1",
+  "description": "The form widget for Floop",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damiensedgwick/floop-widget.git"
+  },
+  "author": "Damien Sedgwick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiensedgwick/floop-widget/issues"
+  },
+  "homepage": "https://github.com/damiensedgwick/floop-widget#readme"
+}

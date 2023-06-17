@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.5
+
+### Patch Changes
+
+- 7904594: Removed state prop and updated README
+
 ## 0.0.4
 
 ### Patch Changes

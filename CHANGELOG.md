@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.6
+
+### Patch Changes
+
+- d0578eb: implemented different widget view navigation
+
 ## 0.0.5
 
 ### Patch Changes

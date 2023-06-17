@@ -125,16 +125,13 @@ const FloopWidgetFooter = () => {
 };
 
 type FloopWidgetProps = {
-  showWidget: boolean;
   projectId: string;
   children: ReactNode;
 };
 
-export const FloopWidget = ({
-  showWidget,
-  projectId,
-  children,
-}: FloopWidgetProps) => {
+export const FloopWidget = ({ projectId, children }: FloopWidgetProps) => {
+  const [showWidget, setShowWidget] = useState(false);
+
   const [widgetType, setWidgetType] = useState<
     "default" | "rating" | "issue" | "suggestion"
   >("default");
@@ -146,6 +143,8 @@ export const FloopWidget = ({
       style={{
         position: "relative",
       }}
+      onClick={() => setShowWidget(!showWidget)}
+      role="button"
     >
       {children}
 

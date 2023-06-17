@@ -22,18 +22,10 @@ The Floop widget for React apps.
 import {FloopWidget} from "./index";
 
 export const MyComponent = () => {
-  const [showWidget, setShowWidget] = useState(false);
-    
   return (
-    <div>
-      <FloopWidget
-        projectId="..."
-        userEmail="..."
-        showWidget
-      >
-        <button>Give feedback</button>
-      </FloopWidget>
-    </div>
+    <FloopWidget projectId="..." userEmail="...">
+      <button>Give feedback</button>
+    </FloopWidget>
   );
 };
 ```

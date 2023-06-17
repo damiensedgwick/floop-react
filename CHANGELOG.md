@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.4
+
+### Patch Changes
+
+- 51aa091: added some minor ui fixes
+
 ## 0.0.3
 
 ### Patch Changes

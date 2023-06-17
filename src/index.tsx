@@ -16,8 +16,11 @@ const widgetStyle = {
   margin: "auto",
   display: "flex",
   flexDirection: "column" as const,
+  background: "white",
   borderRadius: "1rem",
   boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+  textAlign: "center",
+  fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
 };
 
 const widgetTitleStyle = {

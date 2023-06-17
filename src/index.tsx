@@ -19,7 +19,7 @@ const widgetStyle = {
   background: "white",
   borderRadius: "1rem",
   boxShadow: "0 25px 50px -12px rgb(0 0 0 / 0.25)",
-  textAlign: "center",
+  textAlign: "center" as const,
   fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
 };
 

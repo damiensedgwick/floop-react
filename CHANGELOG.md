@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.3
+
+### Patch Changes
+
+- 50ee0e2: amended package.json peer deps
+
 ## 0.0.2
 
 ### Patch Changes

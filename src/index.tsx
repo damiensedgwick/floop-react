@@ -1,4 +1,10 @@
-import React, { Dispatch, ReactNode, SetStateAction, useState } from "react";
+import React, {
+  Dispatch,
+  FormEvent,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 import {
   ArrowLeftIcon,
   ExclamationTriangleIcon,
@@ -9,7 +15,7 @@ import {
 
 const widgetStyle = {
   position: "absolute" as const,
-  top: "75px",
+  top: "60px",
   left: "50%",
   transform: "TranslateX(-50%)",
   width: "320px",
@@ -115,6 +121,16 @@ const FloopDefault = ({ setShowWidget, setWidgetType }: FloopDefaultProps) => {
 };
 
 const FloopRating = ({ setShowWidget, setWidgetType }: FloopDefaultProps) => {
+  const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    console.log(form);
+    console.log(formData);
+  };
+
   return (
     <div style={widgetContentStyle}>
       <div
@@ -139,18 +155,83 @@ const FloopRating = ({ setShowWidget, setWidgetType }: FloopDefaultProps) => {
         <XMarkIcon
           width={20}
           height={20}
-          onClick={() => setShowWidget(false)}
+          onClick={() => {
+            setWidgetType("default");
+            setShowWidget(false);
+          }}
           style={{
             cursor: "pointer",
             opacity: "0.5",
           }}
         />
       </div>
+      <form
+        onSubmit={(e) => handleRatingSubmit(e)}
+        style={{ marginTop: "1.5rem" }}
+      >
+        <div style={{ display: "flex", padding: "0 1.5rem" }}>
+          <label
+            htmlFor="rating"
+            style={{
+              width: "300px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              marginRight: "auto",
+              marginLeft: "auto",
+            }}
+          >
+            1<input type="radio" name="rating" value={1} />
+            2<input type="radio" name="rating" value={2} />
+            3<input type="radio" name="rating" value={3} />
+            4<input type="radio" name="rating" value={4} />
+            5<input type="radio" name="rating" value={5} />
+          </label>
+        </div>
+        <label htmlFor="message">
+          <textarea
+            name="message"
+            id=""
+            cols={30}
+            rows={4}
+            placeholder="Any kind words?"
+          ></textarea>
+        </label>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "260px",
+            margin: "0.5rem auto 0 auto",
+          }}
+        >
+          <FloopWidgetFooter />
+          <button
+            type="submit"
+            style={{ background: "none", padding: "0.25rem" }}
+          >
+            <small>Submit rating</small>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
 
 const FloopIssue = ({ setShowWidget, setWidgetType }: FloopDefaultProps) => {
+  const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    console.log(form);
+    console.log(formData);
+  };
+
   return (
     <div style={widgetContentStyle}>
       <div
@@ -175,13 +256,68 @@ const FloopIssue = ({ setShowWidget, setWidgetType }: FloopDefaultProps) => {
         <XMarkIcon
           width={20}
           height={20}
-          onClick={() => setShowWidget(false)}
+          onClick={() => {
+            setWidgetType("default");
+            setShowWidget(false);
+          }}
           style={{
             cursor: "pointer",
             opacity: "0.5",
           }}
         />
       </div>
+      <form
+        onSubmit={(e) => handleRatingSubmit(e)}
+        style={{ marginTop: "1.5rem" }}
+      >
+        <label
+          htmlFor="title"
+          style={{
+            width: "270px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            marginTop: "1rem",
+            marginBottom: "1rem",
+            marginRight: "auto",
+            marginLeft: "auto",
+          }}
+        >
+          <input
+            type="text"
+            name="title"
+            placeholder="Issue title"
+            style={{ width: "100%", padding: "0.25rem" }}
+          />
+        </label>
+        <label htmlFor="message">
+          <textarea
+            name="message"
+            id=""
+            cols={30}
+            rows={4}
+            placeholder="Issue message"
+            style={{ padding: "0.5rem" }}
+          ></textarea>
+        </label>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "260px",
+            margin: "0.5rem auto 0 auto",
+          }}
+        >
+          <FloopWidgetFooter />
+          <button
+            type="submit"
+            style={{ background: "none", padding: "0.25rem" }}
+          >
+            <small>Submit issue</small>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
@@ -190,6 +326,16 @@ const FloopSuggestion = ({
   setShowWidget,
   setWidgetType,
 }: FloopDefaultProps) => {
+  const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    console.log(form);
+    console.log(formData);
+  };
+
   return (
     <div style={widgetContentStyle}>
       <div
@@ -210,18 +356,95 @@ const FloopSuggestion = ({
           onClick={() => setWidgetType("default")}
           style={{ cursor: "pointer" }}
         />
-        <h1 style={widgetTitleStyle}>Make a suggestion</h1>
+        <h1 style={widgetTitleStyle}>Share your idea</h1>
         <XMarkIcon
           width={20}
           height={20}
-          onClick={() => setShowWidget(false)}
+          onClick={() => {
+            setWidgetType("default");
+            setShowWidget(false);
+          }}
           style={{
             cursor: "pointer",
             opacity: "0.5",
           }}
         />
       </div>
+      <form
+        onSubmit={(e) => handleRatingSubmit(e)}
+        style={{ marginTop: "1.5rem" }}
+      >
+        <div style={{ display: "flex", padding: "0 1.5rem" }}>
+          <label
+            htmlFor="title"
+            style={{
+              width: "275px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              marginRight: "auto",
+              marginLeft: "auto",
+            }}
+          >
+            <input
+              type="text"
+              name="title"
+              placeholder="Suggestion title"
+              style={{ width: "100%", padding: "0.25rem" }}
+            />
+          </label>
+        </div>
+        <label htmlFor="message">
+          <textarea
+            name="message"
+            cols={30}
+            rows={4}
+            placeholder="Suggestion message"
+            style={{ padding: "0.5rem" }}
+          ></textarea>
+        </label>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "260px",
+            margin: "0.5rem auto 0 auto",
+          }}
+        >
+          <FloopWidgetFooter />
+          <button
+            type="submit"
+            style={{ background: "none", padding: "0.25rem" }}
+          >
+            <small>Submit suggestion</small>
+          </button>
+        </div>
+      </form>
     </div>
+  );
+};
+
+const FloopWidgetFooter = () => {
+  return (
+    <small style={{ fontSize: "0.7rem", opacity: "0.5" }}>
+      Widget by{" "}
+      <span>
+        <strong>
+          <a
+            style={{
+              color: "inherit",
+            }}
+            href="https://www.feedback-loop.io"
+            target="_blank"
+          >
+            Floop
+          </a>
+        </strong>
+      </span>
+    </small>
   );
 };
 
@@ -240,6 +463,8 @@ export const FloopWidget = ({ projectId, children }: FloopWidgetProps) => {
     <div
       style={{
         position: "relative",
+        width: "320px",
+        height: "100%",
       }}
     >
       <div onClick={() => setShowWidget(!showWidget)}>{children}</div>
@@ -273,23 +498,6 @@ export const FloopWidget = ({ projectId, children }: FloopWidgetProps) => {
               setShowWidget={setShowWidget}
             />
           ) : null}
-
-          <small style={{ fontSize: "0.7rem", opacity: "0.5" }}>
-            Widget by{" "}
-            <span>
-              <strong>
-                <a
-                  style={{
-                    color: "inherit",
-                  }}
-                  href="https://www.feedback-loop.io"
-                  target="_blank"
-                >
-                  Floop
-                </a>
-              </strong>
-            </span>
-          </small>
         </div>
       ) : null}
     </div>

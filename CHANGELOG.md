@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.7
+
+### Patch Changes
+
+- e869447: Added UI for all form sections
+
 ## 0.0.6
 
 ### Patch Changes

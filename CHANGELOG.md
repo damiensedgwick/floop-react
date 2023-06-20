@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.8
+
+### Patch Changes
+
+- bde6bcf: refactored code
+
 ## 0.0.7
 
 ### Patch Changes

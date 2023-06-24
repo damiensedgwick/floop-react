@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.10
+
+### Patch Changes
+
+- 7230500: trying to style a damn widget
+
 ## 0.0.9
 
 ### Patch Changes

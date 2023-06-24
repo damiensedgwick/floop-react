@@ -1,12 +1,11 @@
 export const wrapper = {
   position: "relative" as const,
-  width: "325px",
-  height: "250px",
 };
 
 export const widget = {
-  width: "100%",
-  height: "100%",
+  position: "absolute",
+  width: "320px",
+  height: "250px",
   padding: "16px",
   display: "flex",
   flexDirection: "column" as const,

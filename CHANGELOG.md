@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.9
+
+### Patch Changes
+
+- d460bad: tweaked sizing of widget
+
 ## 0.0.8
 
 ### Patch Changes

@@ -5,7 +5,7 @@ export const wrapper = {
 export const widget = {
   position: "absolute" as const,
   width: "320px",
-  height: "250px",
+  height: "200px",
   padding: "16px",
   display: "flex",
   flexDirection: "column" as const,
@@ -18,15 +18,17 @@ export const widget = {
 };
 
 export const header = {
+  width: "100%",
+  maxWidth: "300px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  marginBottom: "16px",
+  margin: "0 auto 16px auto",
 };
 
 export const footer = {
   padding: "0",
-  margin: "0",
+  margin: "4px 0 0 0",
   textAlign: "center" as const,
   fontSize: "12px",
   opacity: "0.5",
@@ -49,7 +51,8 @@ export const content = {
 };
 
 export const form = {
-  width: "320px",
+  width: "100%",
+  maxWidth: "300px",
   display: "flex",
   flexDirection: "column" as const,
   justifyContent: "space-between",
@@ -57,8 +60,8 @@ export const form = {
 };
 
 export const label = {
-  marginTop: "8px",
-  marginBottom: "8px",
+  marginTop: "4px",
+  marginBottom: "4px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -66,7 +69,7 @@ export const label = {
 
 export const input = {
   width: "100%",
-  maxWidth: "305px",
+  maxWidth: "300px",
   padding: "6px",
   fontSize: "14px",
   borderRadius: "8px",
@@ -77,6 +80,7 @@ export const input = {
 export const bar = {
   height: "10px",
   borderRadius: "8px",
+  marginBottom: "4px",
   background:
     "linear-gradient(to right,#f87171, #fb923c, #fbbf24, #a3e635, #4ade80)",
 };
@@ -92,8 +96,8 @@ export const radio = {
 
 export const textarea = {
   width: "100%",
-  maxWidth: "305px",
-  height: "60px",
+  maxWidth: "300px",
+  height: "50px",
   padding: "6px",
   fontSize: "14px",
   borderRadius: "8px",
@@ -102,15 +106,15 @@ export const textarea = {
 };
 
 export const buttons = {
+  height: "150px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  marginTop: "65px",
 };
 
 export const button = {
-  width: "88px",
-  height: "88px",
+  width: "100px",
+  height: "100px",
   padding: "8px",
   display: "flex",
   flexDirection: "column" as const,
@@ -123,8 +127,8 @@ export const button = {
 };
 
 export const submit = {
-  marginTop: "8px",
-  marginBottom: "8px",
+  marginTop: "4px",
+  marginBottom: "4px",
   padding: "5px 10px",
   cursor: "pointer",
   borderRadius: "8px",

@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.12
+
+### Patch Changes
+
+- 528ed3b: rewrote the css using css modules
+
 ## 0.0.11
 
 ### Patch Changes

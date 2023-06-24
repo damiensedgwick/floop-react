@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.11
+
+### Patch Changes
+
+- c62d39a: made widget slightly bigger
+
 ## 0.0.10
 
 ### Patch Changes

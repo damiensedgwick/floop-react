@@ -4,8 +4,8 @@ export const wrapper = {
 
 export const widget = {
   position: "absolute" as const,
-  width: "320px",
-  height: "200px",
+  width: "350px",
+  height: "250px",
   padding: "16px",
   display: "flex",
   flexDirection: "column" as const,
@@ -97,7 +97,7 @@ export const radio = {
 export const textarea = {
   width: "100%",
   maxWidth: "300px",
-  height: "50px",
+  height: "65px",
   padding: "6px",
   fontSize: "14px",
   borderRadius: "8px",

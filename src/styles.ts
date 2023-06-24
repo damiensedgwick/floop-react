@@ -3,7 +3,7 @@ export const wrapper = {
 };
 
 export const widget = {
-  position: "absolute",
+  position: "absolute" as const,
   width: "320px",
   height: "250px",
   padding: "16px",

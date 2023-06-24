@@ -1,16 +1,8 @@
 import React, { Dispatch, FormEvent, SetStateAction } from "react";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  content,
-  form,
-  header,
-  input,
-  label,
-  submit,
-  textarea,
-  title,
-} from "./styles";
 import { WidgetType } from "./types";
+import { FloopWidgetFooter } from "./FloopWidgetFooter";
+import styles from "./index.module.css";
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -29,15 +21,15 @@ export const FloopWidgetIssue = ({ setShowWidget, setWidgetType }: Props) => {
   };
 
   return (
-    <div style={content}>
-      <div style={header}>
+    <div className={styles.issue}>
+      <div className={styles.title}>
         <ArrowLeftIcon
           width={20}
           height={20}
           onClick={() => setWidgetType("default")}
           style={{ cursor: "pointer" }}
         />
-        <p style={title}>Report an issue</p>
+        <p>Report an issue</p>
         <XMarkIcon
           width={20}
           height={20}
@@ -47,27 +39,27 @@ export const FloopWidgetIssue = ({ setShowWidget, setWidgetType }: Props) => {
           }}
         />
       </div>
-      <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-        <label htmlFor="title" style={label}>
+      <form onSubmit={(e) => handleRatingSubmit(e)} className={styles.form}>
+        <label htmlFor="title">
           <input
             type="text"
             name="title"
             placeholder="What issue are you having?"
-            style={input}
             required
           />
         </label>
-        <label htmlFor="message" style={label}>
+        <label htmlFor="message">
           <textarea
             name="message"
             placeholder="Can you provide any additional details?"
-            style={textarea}
           ></textarea>
         </label>
-        <button type="submit" style={submit}>
+        <button type="submit">
           <small>Submit</small>
         </button>
       </form>
+
+      <FloopWidgetFooter />
     </div>
   );
 };

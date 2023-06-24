@@ -1,18 +1,8 @@
 import React, { Dispatch, FormEvent, SetStateAction } from "react";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { WidgetType } from "./types";
-import {
-  bar,
-  content,
-  form,
-  header,
-  label,
-  radio,
-  rating,
-  submit,
-  textarea,
-  title,
-} from "./styles";
+import { FloopWidgetFooter } from "./FloopWidgetFooter";
+import styles from "./index.module.css";
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -31,14 +21,14 @@ export const FloopWidgetRating = ({ setShowWidget, setWidgetType }: Props) => {
   };
 
   return (
-    <div style={content}>
-      <div style={header}>
+    <div className={styles.rating}>
+      <div className={styles.title}>
         <ArrowLeftIcon
           width={20}
           height={20}
           onClick={() => setWidgetType("default")}
         />
-        <p style={title}>Rate our product</p>
+        <p>Rate our product</p>
         <XMarkIcon
           width={20}
           height={20}
@@ -49,71 +39,41 @@ export const FloopWidgetRating = ({ setShowWidget, setWidgetType }: Props) => {
         />
       </div>
 
-      <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-        <span style={bar} />
-        <label htmlFor="rating" style={label}>
-          <span style={rating}>
+      <form onSubmit={(e) => handleRatingSubmit(e)} className={styles.form}>
+        <label htmlFor="rating" className={styles.rating}>
+          <span>
             1
-            <input
-              type="radio"
-              name="rating"
-              value={1}
-              style={radio}
-              required
-            />
+            <input type="radio" name="rating" value={1} required />
           </span>
-          <span style={rating}>
+          <span>
             2
-            <input
-              type="radio"
-              name="rating"
-              value={2}
-              style={radio}
-              required
-            />
+            <input type="radio" name="rating" value={2} required />
           </span>
-          <span style={rating}>
+          <span>
             3
-            <input
-              type="radio"
-              name="rating"
-              value={3}
-              style={radio}
-              required
-            />
+            <input type="radio" name="rating" value={3} required />
           </span>
-          <span style={rating}>
+          <span>
             4
-            <input
-              type="radio"
-              name="rating"
-              value={4}
-              style={radio}
-              required
-            />
+            <input type="radio" name="rating" value={4} required />
           </span>
-          <span style={rating}>
+          <span>
             5
-            <input
-              type="radio"
-              name="rating"
-              value={5}
-              style={radio}
-              required
-            />
+            <input type="radio" name="rating" value={5} required />
           </span>
         </label>
-        <label htmlFor="message" style={label}>
+        <label htmlFor="message">
           <textarea
             name="message"
             placeholder="Why did you give this rating?"
-            style={textarea}
           ></textarea>
         </label>
-        <button type="submit" style={submit}>
+        <button type="submit">
           <small>Submit</small>
         </button>
       </form>
+
+      <FloopWidgetFooter />
     </div>
   );
 };

@@ -6,7 +6,8 @@ import {
   StarIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { content, title, header, button, buttons } from "./styles";
+import { FloopWidgetFooter } from "./FloopWidgetFooter";
+import styles from "./index.module.css";
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -15,34 +16,32 @@ type Props = {
 
 export const FloopWidgetDefault = ({ setShowWidget, setWidgetType }: Props) => {
   return (
-    <div style={content}>
-      <div style={header}>
-        <p style={title}>What would you like to say?</p>
+    <div className={styles.default}>
+      <div className={styles.title}>
+        <p>What would you like to say?</p>
         <XMarkIcon
           width={20}
           height={20}
           onClick={() => setShowWidget(false)}
-          style={{
-            cursor: "pointer",
-            opacity: "0.5",
-          }}
         />
       </div>
 
-      <div style={buttons}>
-        <button style={button} onClick={() => setWidgetType("rating")}>
+      <div>
+        <button onClick={() => setWidgetType("rating")}>
           <StarIcon width={48} height={48} />
           <small>Rating</small>
         </button>
-        <button style={button} onClick={() => setWidgetType("issue")}>
+        <button onClick={() => setWidgetType("issue")}>
           <ExclamationTriangleIcon width={48} height={48} />
           <small>issue</small>
         </button>
-        <button style={button} onClick={() => setWidgetType("suggestion")}>
+        <button onClick={() => setWidgetType("suggestion")}>
           <LightBulbIcon width={48} height={48} />
           <small>suggestion</small>
         </button>
       </div>
+
+      <FloopWidgetFooter />
     </div>
   );
 };

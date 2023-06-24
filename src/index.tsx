@@ -1,11 +1,10 @@
 import React, { ReactNode, useState } from "react";
 import { FloopWidgetDefault } from "./FloopWidgetDefault";
-import { wrapper, widget } from "./styles";
+import styles from "./index.module.css";
 import { FloopWidgetRating } from "./FloopWidgetRating";
 import { FloopWidgetIssue } from "./FloopWidgetIssue";
 import { FloopWidgetSuggestion } from "./FloopWidgetSuggestion";
 import { WidgetType } from "./types";
-import { FloopWidgetFooter } from "./FloopWidgetFooter";
 
 type Props = {
   projectId: string;
@@ -17,11 +16,11 @@ export const FloopWidget = ({ projectId, children }: Props) => {
   const [widgetType, setWidgetType] = useState<WidgetType>("default");
 
   return (
-    <div style={wrapper}>
-      <div onClick={() => setShowWidget(!showWidget)}>{children}</div>
+    <div className={styles.wrapper}>
+      <span onClick={() => setShowWidget(!showWidget)}>{children}</span>
 
       {showWidget ? (
-        <div style={widget}>
+        <div className={styles.widget}>
           {widgetType === "default" ? (
             <FloopWidgetDefault
               setWidgetType={setWidgetType}
@@ -49,8 +48,6 @@ export const FloopWidget = ({ projectId, children }: Props) => {
               setShowWidget={setShowWidget}
             />
           ) : null}
-
-          <FloopWidgetFooter />
         </div>
       ) : null}
     </div>

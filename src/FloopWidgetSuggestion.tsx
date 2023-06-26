@@ -16,6 +16,7 @@ import {
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
   setWidgetType: Dispatch<SetStateAction<WidgetType>>;
+  projectId: string;
 };
 
 export const FloopWidgetSuggestion = ({

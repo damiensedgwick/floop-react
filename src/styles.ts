@@ -11,7 +11,7 @@ export const widget = {
   position: "absolute",
   top: "25px",
   width: "300px",
-  height: "185px",
+  height: "200px",
   padding: "8px 16px",
   borderRadius: "16px",
   fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
@@ -69,7 +69,7 @@ export const form = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: "10px",
+  gap: "8px",
 } as CSSProperties;
 
 export const rating = {

@@ -20,7 +20,8 @@ export const FloopWidget = ({ projectId, children }: Props) => {
       <span onClick={() => setShowWidget(!showWidget)}>{children}</span>
 
       {showWidget ? (
-        <div style={widget}>
+        // TODO: Make position user adjustable
+        <div style={{ ...widget, right: "0" }}>
           {widgetType === "default" ? (
             <FloopWidgetDefault
               setWidgetType={setWidgetType}
@@ -32,6 +33,7 @@ export const FloopWidget = ({ projectId, children }: Props) => {
             <FloopWidgetRating
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
+              projectId={projectId}
             />
           ) : null}
 
@@ -39,6 +41,7 @@ export const FloopWidget = ({ projectId, children }: Props) => {
             <FloopWidgetIssue
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
+              projectId={projectId}
             />
           ) : null}
 
@@ -46,6 +49,7 @@ export const FloopWidget = ({ projectId, children }: Props) => {
             <FloopWidgetSuggestion
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
+              projectId={projectId}
             />
           ) : null}
         </div>

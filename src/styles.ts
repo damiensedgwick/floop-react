@@ -5,9 +5,6 @@ export const wrapper = {
   margin: 0,
   padding: 0,
   boxSizing: "border-box",
-  fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
-  fontSize: "12px",
-  fontWeight: "normal",
 } as CSSProperties;
 
 export const widget = {
@@ -17,8 +14,12 @@ export const widget = {
   height: "180px",
   padding: "8px 16px",
   borderRadius: "16px",
+  fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
+  fontSize: "12px",
+  fontWeight: "normal",
   boxShadow:
     "rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px",
+  zIndex: "41189",
 } as CSSProperties;
 
 export const content = {

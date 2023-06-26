@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.17
+
+### Patch Changes
+
+- e4247bb: last style tweak for now
+
 ## 0.0.16
 
 ### Patch Changes

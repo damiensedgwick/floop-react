@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.16
+
+### Patch Changes
+
+- 9ecae79: tweaked styles
+
 ## 0.0.15
 
 ### Patch Changes

@@ -36,7 +36,7 @@ export const title = {
   justifyContent: "space-between",
   fontSize: "16px",
   fontWeight: "bold",
-  marginBottom: "10px",
+  marginBottom: "6px",
 } as CSSProperties;
 
 export const text = {
@@ -69,7 +69,7 @@ export const form = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: "8px",
+  gap: "6px",
 } as CSSProperties;
 
 export const rating = {
@@ -133,6 +133,7 @@ export const submit = {
 
 export const footer = {
   textAlign: "center",
+  fontSize: "10px",
   color: "#94a3b8",
 } as CSSProperties;
 

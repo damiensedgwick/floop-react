@@ -11,7 +11,7 @@ export const widget = {
   position: "absolute",
   top: "25px",
   width: "300px",
-  height: "180px",
+  height: "185px",
   padding: "8px 16px",
   borderRadius: "16px",
   fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
@@ -36,7 +36,7 @@ export const title = {
   justifyContent: "space-between",
   fontSize: "16px",
   fontWeight: "bold",
-  marginBottom: "6px",
+  marginBottom: "4px",
 } as CSSProperties;
 
 export const text = {
@@ -69,11 +69,12 @@ export const form = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  gap: "6px",
+  gap: "10px",
 } as CSSProperties;
 
 export const rating = {
   width: "100%",
+  height: "22px",
   padding: "0 4px",
   display: "flex",
   justifyContent: "space-between",
@@ -97,7 +98,7 @@ export const label = {
 
 export const input = {
   width: "100%",
-  padding: "4px",
+  padding: "3px 6px",
   border: "1px solid #e2e8f0",
   borderRadius: "8px",
   boxSizing: "border-box",
@@ -109,7 +110,7 @@ export const input = {
 export const textarea = {
   width: "100%",
   height: "45px",
-  padding: "4px",
+  padding: "3px 6px",
   border: "1px solid #e2e8f0",
   borderRadius: "8px",
   boxSizing: "border-box",

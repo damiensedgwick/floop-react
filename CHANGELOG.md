@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.15
+
+### Patch Changes
+
+- fdf855e: added font sizes
+
 ## 0.0.14
 
 ### Patch Changes

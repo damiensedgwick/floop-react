@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import { FloopWidgetDefault } from "./FloopWidgetDefault";
-import styles from "./index.module.css";
+import { widget, wrapper } from "./styles";
 import { FloopWidgetRating } from "./FloopWidgetRating";
 import { FloopWidgetIssue } from "./FloopWidgetIssue";
 import { FloopWidgetSuggestion } from "./FloopWidgetSuggestion";
@@ -16,11 +16,11 @@ export const FloopWidget = ({ projectId, children }: Props) => {
   const [widgetType, setWidgetType] = useState<WidgetType>("default");
 
   return (
-    <div className={styles.wrapper}>
+    <div style={wrapper}>
       <span onClick={() => setShowWidget(!showWidget)}>{children}</span>
 
       {showWidget ? (
-        <div className={styles.widget}>
+        <div style={widget}>
           {widgetType === "default" ? (
             <FloopWidgetDefault
               setWidgetType={setWidgetType}

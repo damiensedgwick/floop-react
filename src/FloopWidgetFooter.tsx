@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./index.module.css";
+import { footer, branding } from "./styles";
 
 export const FloopWidgetFooter = () => {
   return (
-    <p className={styles.footer}>
+    <p style={footer}>
       Widget by{" "}
       <strong>
-        <a href="https://www.feedback-loop.io" target="_blank">
+        <a style={branding} href="https://www.feedback-loop.io" target="_blank">
           Floop
         </a>
       </strong>

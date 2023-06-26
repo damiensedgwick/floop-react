@@ -2,7 +2,16 @@ import React, { Dispatch, FormEvent, SetStateAction } from "react";
 import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { WidgetType } from "./types";
 import { FloopWidgetFooter } from "./FloopWidgetFooter";
-import styles from "./index.module.css";
+import {
+  content,
+  form,
+  input,
+  label,
+  submit,
+  text,
+  textarea,
+  title,
+} from "./styles";
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -24,14 +33,14 @@ export const FloopWidgetSuggestion = ({
   };
 
   return (
-    <div className={styles.suggestion}>
-      <div className={styles.title}>
+    <div style={content}>
+      <div style={title}>
         <ArrowLeftIcon
           width={20}
           height={20}
           onClick={() => setWidgetType("default")}
         />
-        <p>Share your idea</p>
+        <p style={text}>Share your idea</p>
         <XMarkIcon
           width={20}
           height={20}
@@ -41,22 +50,24 @@ export const FloopWidgetSuggestion = ({
           }}
         />
       </div>
-      <form onSubmit={(e) => handleRatingSubmit(e)} className={styles.form}>
-        <label htmlFor="title">
+      <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
+        <label htmlFor="title" style={label}>
           <input
             type="text"
             name="title"
+            style={input}
             placeholder="What is your suggestion?"
             required
           />
         </label>
-        <label htmlFor="message">
+        <label htmlFor="message" style={label}>
           <textarea
             name="message"
             placeholder="Can you provide any additional details?"
+            style={textarea}
           ></textarea>
         </label>
-        <button type="submit">
+        <button type="submit" style={submit}>
           <small>Submit</small>
         </button>
       </form>

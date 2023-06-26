@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.13
+
+### Patch Changes
+
+- 6b8c1a9: styled widget using inline styles
+
 ## 0.0.12
 
 ### Patch Changes

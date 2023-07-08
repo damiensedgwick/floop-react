@@ -1,7 +1,7 @@
-import React, { Dispatch, FormEvent, SetStateAction } from "react";
-import { ArrowLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { WidgetType } from "./types";
-import { FloopWidgetFooter } from "./FloopWidgetFooter";
+import React, { Dispatch, FormEvent, SetStateAction } from 'react';
+import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { WidgetType } from './types';
+import { FloopWidgetFooter } from './FloopWidgetFooter';
 import {
   content,
   form,
@@ -12,7 +12,7 @@ import {
   text,
   textarea,
   title,
-} from "./styles";
+} from './styles';
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -37,50 +37,50 @@ export const FloopWidgetRating = ({ setShowWidget, setWidgetType }: Props) => {
         <ArrowLeftIcon
           width={20}
           height={20}
-          onClick={() => setWidgetType("default")}
+          onClick={() => setWidgetType('default')}
         />
         <p style={text}>Rate our product</p>
         <XMarkIcon
           width={20}
           height={20}
           onClick={() => {
-            setWidgetType("default");
+            setWidgetType('default');
             setShowWidget(false);
           }}
         />
       </div>
 
       <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-        <label htmlFor="rating" style={rating}>
+        <label htmlFor='rating' style={rating}>
           <span style={span}>
             1
-            <input type="radio" name="rating" value={1} required />
+            <input type='radio' name='rating' value={1} required />
           </span>
           <span style={span}>
             2
-            <input type="radio" name="rating" value={2} required />
+            <input type='radio' name='rating' value={2} required />
           </span>
           <span style={span}>
             3
-            <input type="radio" name="rating" value={3} required />
+            <input type='radio' name='rating' value={3} required />
           </span>
           <span style={span}>
             4
-            <input type="radio" name="rating" value={4} required />
+            <input type='radio' name='rating' value={4} required />
           </span>
           <span style={span}>
             5
-            <input type="radio" name="rating" value={5} required />
+            <input type='radio' name='rating' value={5} required />
           </span>
         </label>
-        <label htmlFor="message" style={label}>
+        <label htmlFor='message' style={label}>
           <textarea
-            name="message"
-            placeholder="Why did you give this rating?"
+            name='message'
+            placeholder='Why did you give this rating?'
             style={textarea}
           ></textarea>
         </label>
-        <button type="submit" style={submit}>
+        <button type='submit' style={submit}>
           <small>Submit</small>
         </button>
       </form>

@@ -1,4 +1,4 @@
-import React, { Dispatch, FormEvent, SetStateAction } from 'react';
+import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
 import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
@@ -26,8 +26,11 @@ export const FloopWidgetSuggestion = ({
   projectId,
   userEmail,
 }: Props) => {
+  const [submitting, setSubmitting] = useState(false);
+
   const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -51,6 +54,10 @@ export const FloopWidgetSuggestion = ({
         },
         body: JSON.stringify(body),
       });
+
+      setSubmitting(false);
+      setWidgetType('default');
+      setShowWidget(false);
     } catch (error) {
       console.log('Error sending rating: ', error);
     }
@@ -74,27 +81,35 @@ export const FloopWidgetSuggestion = ({
           }}
         />
       </div>
-      <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-        <label htmlFor='title' style={label}>
-          <input
-            type='text'
-            name='title'
-            style={input}
-            placeholder='What is your suggestion?'
-            required
-          />
-        </label>
-        <label htmlFor='message' style={label}>
-          <textarea
-            name='message'
-            placeholder='Can you provide any additional details?'
-            style={textarea}
-          ></textarea>
-        </label>
-        <button type='submit' style={submit}>
-          <small>Submit</small>
-        </button>
-      </form>
+      {submitting ? (
+        <p
+          style={{ fontWeight: 'bold', textAlign: 'center', fontSize: '14px' }}
+        >
+          Submitting suggestion...
+        </p>
+      ) : (
+        <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
+          <label htmlFor='title' style={label}>
+            <input
+              type='text'
+              name='title'
+              style={input}
+              placeholder='What is your suggestion?'
+              required
+            />
+          </label>
+          <label htmlFor='message' style={label}>
+            <textarea
+              name='message'
+              placeholder='Can you provide any additional details?'
+              style={textarea}
+            ></textarea>
+          </label>
+          <button type='submit' style={submit}>
+            <small>Submit</small>
+          </button>
+        </form>
+      )}
 
       <FloopWidgetFooter />
     </div>

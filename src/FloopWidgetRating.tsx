@@ -1,4 +1,4 @@
-import React, { Dispatch, FormEvent, SetStateAction } from 'react';
+import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
 import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
@@ -27,8 +27,11 @@ export const FloopWidgetRating = ({
   projectId,
   userEmail,
 }: Props) => {
+  const [submitting, setSubmitting] = useState(false);
+
   const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -52,6 +55,10 @@ export const FloopWidgetRating = ({
         },
         body: JSON.stringify(body),
       });
+
+      setSubmitting(false);
+      setWidgetType('default');
+      setShowWidget(false);
     } catch (error) {
       console.log('Error sending rating: ', error);
     }
@@ -76,40 +83,48 @@ export const FloopWidgetRating = ({
         />
       </div>
 
-      <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-        <label htmlFor='rating' style={rating}>
-          <span style={span}>
-            1
-            <input type='radio' name='rating' value={1} required />
-          </span>
-          <span style={span}>
-            2
-            <input type='radio' name='rating' value={2} required />
-          </span>
-          <span style={span}>
-            3
-            <input type='radio' name='rating' value={3} required />
-          </span>
-          <span style={span}>
-            4
-            <input type='radio' name='rating' value={4} required />
-          </span>
-          <span style={span}>
-            5
-            <input type='radio' name='rating' value={5} required />
-          </span>
-        </label>
-        <label htmlFor='message' style={label}>
-          <textarea
-            name='message'
-            placeholder='Why did you give this rating?'
-            style={textarea}
-          ></textarea>
-        </label>
-        <button type='submit' style={submit}>
-          <small>Submit</small>
-        </button>
-      </form>
+      {submitting ? (
+        <p
+          style={{ fontWeight: 'bold', textAlign: 'center', fontSize: '14px' }}
+        >
+          Submitting rating...
+        </p>
+      ) : (
+        <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
+          <label htmlFor='rating' style={rating}>
+            <span style={span}>
+              1
+              <input type='radio' name='rating' value={1} required />
+            </span>
+            <span style={span}>
+              2
+              <input type='radio' name='rating' value={2} required />
+            </span>
+            <span style={span}>
+              3
+              <input type='radio' name='rating' value={3} required />
+            </span>
+            <span style={span}>
+              4
+              <input type='radio' name='rating' value={4} required />
+            </span>
+            <span style={span}>
+              5
+              <input type='radio' name='rating' value={5} required />
+            </span>
+          </label>
+          <label htmlFor='message' style={label}>
+            <textarea
+              name='message'
+              placeholder='Why did you give this rating?'
+              style={textarea}
+            ></textarea>
+          </label>
+          <button type='submit' style={submit}>
+            <small>Submit</small>
+          </button>
+        </form>
+      )}
 
       <FloopWidgetFooter />
     </div>

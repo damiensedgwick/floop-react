@@ -21,8 +21,7 @@ export const FloopWidget = ({ projectId, userEmail, children }: Props) => {
       <span onClick={() => setShowWidget(!showWidget)}>{children}</span>
 
       {showWidget ? (
-        // TODO: Make position user adjustable
-        <div style={{ ...widget, right: '0' }}>
+        <div style={{ ...widget, left: '50%', transform: 'translateX(-50%)' }}>
           {widgetType === 'default' ? (
             <FloopWidgetDefault
               setWidgetType={setWidgetType}

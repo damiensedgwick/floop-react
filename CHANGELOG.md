@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.20
+
+### Patch Changes
+
+- b1efa02: added email prop to be pass to the forms
+
 ## 0.0.19
 
 ### Patch Changes

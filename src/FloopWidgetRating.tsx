@@ -20,15 +20,39 @@ type Props = {
   projectId: string;
 };
 
-export const FloopWidgetRating = ({ setShowWidget, setWidgetType }: Props) => {
+export const FloopWidgetRating = ({
+  setShowWidget,
+  setWidgetType,
+  projectId,
+}: Props) => {
   const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    console.log(form);
-    console.log(formData);
+    const rating = formData.get('rating');
+    const message = formData.get('message');
+
+    const body = {
+      rating: Number(rating),
+      message: message,
+      project_id: projectId,
+      user_email: 'damienksedgwick@gmail.com',
+    };
+
+    try {
+      await fetch('https://www.feedback-loop.io/submissions/rating/', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+    } catch (error) {
+      console.log('Error sending rating: ', error);
+    }
   };
 
   return (

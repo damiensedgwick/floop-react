@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.21
+
+### Patch Changes
+
+- 97f9198: tweaked submission so that the user can see
+
 ## 0.0.20
 
 ### Patch Changes

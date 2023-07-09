@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.19
+
+### Patch Changes
+
+- b2e189c: form submissions are now working although with hardcoded email
+
 ## 0.0.18
 
 ### Patch Changes

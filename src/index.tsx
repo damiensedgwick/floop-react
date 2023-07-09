@@ -1,19 +1,20 @@
-import React, { ReactNode, useState } from "react";
-import { FloopWidgetDefault } from "./FloopWidgetDefault";
-import { widget, wrapper } from "./styles";
-import { FloopWidgetRating } from "./FloopWidgetRating";
-import { FloopWidgetIssue } from "./FloopWidgetIssue";
-import { FloopWidgetSuggestion } from "./FloopWidgetSuggestion";
-import { WidgetType } from "./types";
+import React, { ReactNode, useState } from 'react';
+import { FloopWidgetDefault } from './FloopWidgetDefault';
+import { widget, wrapper } from './styles';
+import { FloopWidgetRating } from './FloopWidgetRating';
+import { FloopWidgetIssue } from './FloopWidgetIssue';
+import { FloopWidgetSuggestion } from './FloopWidgetSuggestion';
+import { WidgetType } from './types';
 
 type Props = {
   projectId: string;
+  userEmail: string;
   children: ReactNode;
 };
 
-export const FloopWidget = ({ projectId, children }: Props) => {
+export const FloopWidget = ({ projectId, userEmail, children }: Props) => {
   const [showWidget, setShowWidget] = useState(false);
-  const [widgetType, setWidgetType] = useState<WidgetType>("default");
+  const [widgetType, setWidgetType] = useState<WidgetType>('default');
 
   return (
     <div style={wrapper}>
@@ -21,35 +22,38 @@ export const FloopWidget = ({ projectId, children }: Props) => {
 
       {showWidget ? (
         // TODO: Make position user adjustable
-        <div style={{ ...widget, right: "0" }}>
-          {widgetType === "default" ? (
+        <div style={{ ...widget, right: '0' }}>
+          {widgetType === 'default' ? (
             <FloopWidgetDefault
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
             />
           ) : null}
 
-          {widgetType === "rating" ? (
+          {widgetType === 'rating' ? (
             <FloopWidgetRating
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
               projectId={projectId}
+              userEmail={userEmail}
             />
           ) : null}
 
-          {widgetType === "issue" ? (
+          {widgetType === 'issue' ? (
             <FloopWidgetIssue
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
               projectId={projectId}
+              userEmail={userEmail}
             />
           ) : null}
 
-          {widgetType === "suggestion" ? (
+          {widgetType === 'suggestion' ? (
             <FloopWidgetSuggestion
               setWidgetType={setWidgetType}
               setShowWidget={setShowWidget}
               projectId={projectId}
+              userEmail={userEmail}
             />
           ) : null}
         </div>

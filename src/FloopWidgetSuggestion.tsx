@@ -17,12 +17,14 @@ type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
   setWidgetType: Dispatch<SetStateAction<WidgetType>>;
   projectId: string;
+  userEmail: string;
 };
 
 export const FloopWidgetSuggestion = ({
   setShowWidget,
   setWidgetType,
   projectId,
+  userEmail,
 }: Props) => {
   const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ export const FloopWidgetSuggestion = ({
       title: title,
       message: message,
       project_id: projectId,
-      user_email: 'damienksedgwick@gmail.com',
+      user_email: userEmail,
     };
 
     try {

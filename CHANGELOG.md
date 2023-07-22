@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.23
+
+### Patch Changes
+
+- c35fec4: added 1-10 for ratings
+
 ## 0.0.22
 
 ### Patch Changes

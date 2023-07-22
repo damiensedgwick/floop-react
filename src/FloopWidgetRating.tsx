@@ -4,7 +4,7 @@ import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
 import {
   content,
-  form,
+  form, input,
   label,
   rating,
   span,
@@ -91,27 +91,20 @@ export const FloopWidgetRating = ({
         </p>
       ) : (
         <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-          <label htmlFor='rating' style={rating}>
-            <span style={span}>
-              1
-              <input type='radio' name='rating' value={1} required />
-            </span>
-            <span style={span}>
-              2
-              <input type='radio' name='rating' value={2} required />
-            </span>
-            <span style={span}>
-              3
-              <input type='radio' name='rating' value={3} required />
-            </span>
-            <span style={span}>
-              4
-              <input type='radio' name='rating' value={4} required />
-            </span>
-            <span style={span}>
-              5
-              <input type='radio' name='rating' value={5} required />
-            </span>
+          <label htmlFor='rating' style={label}>
+            <span style={{...span, marginBottom: "5px"}}>Rating us out of 10</span>
+           <select style={input}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+             <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8" selected>8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+           </select>
           </label>
           <label htmlFor='message' style={label}>
             <textarea

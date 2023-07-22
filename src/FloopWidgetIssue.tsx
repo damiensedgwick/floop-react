@@ -40,7 +40,7 @@ export const FloopWidgetIssue = ({
 
     const body = {
       title: title,
-      message: message,
+      details: message,
       project_id: projectId,
       user_email: userEmail,
     };

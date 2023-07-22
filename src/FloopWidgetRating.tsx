@@ -40,8 +40,8 @@ export const FloopWidgetRating = ({
     const message = formData.get('message');
 
     const body = {
-      rating: Number(rating),
-      message: message,
+      score: Number(rating),
+      details: message,
       project_id: projectId,
       user_email: userEmail,
     };

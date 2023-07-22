@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.22
+
+### Patch Changes
+
+- 12baedd: aligned body of submissions to api
+
 ## 0.0.21
 
 ### Patch Changes

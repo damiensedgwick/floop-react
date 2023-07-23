@@ -47,7 +47,7 @@ export const FloopWidgetRating = ({
     };
 
     try {
-      await fetch('https://www.feedback-loop.io/submissions/rating/', {
+      await fetch('https://floop-git-develop-damiensedgwick.vercel.app/submissions/ratings', {
         method: 'POST',
         mode: 'no-cors',
         headers: {

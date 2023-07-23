@@ -46,7 +46,7 @@ export const FloopWidgetIssue = ({
     };
 
     try {
-      await fetch('https://www.feedback-loop.io/submissions/issue/', {
+      await fetch('https://floop-git-develop-damiensedgwick.vercel.app/submissions/issues', {
         method: 'POST',
         mode: 'no-cors',
         headers: {

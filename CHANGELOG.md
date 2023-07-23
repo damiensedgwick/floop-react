@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.24
+
+### Patch Changes
+
+- b087018: amended routes
+
 ## 0.0.23
 
 ### Patch Changes

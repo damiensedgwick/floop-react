@@ -19,7 +19,7 @@ The Floop widget for React apps.
 ### Use the Floop widget within your code
 
 ```tsx
-import { FloopWidget } from "./index";
+import { FloopWidget } from "@feedback-loop/react"
 
 export const MyComponent = () => {
   return (

@@ -3,8 +3,11 @@ import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
 import {
+  chars,
   content,
-  form, input,
+  ff,
+  form,
+  input,
   label,
   rating,
   span,
@@ -28,6 +31,7 @@ export const FloopWidgetRating = ({
   userEmail,
 }: Props) => {
   const [submitting, setSubmitting] = useState(false);
+  const [detailsCount, setDetailsCount] = useState(0);
 
   const handleRatingSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,14 +51,17 @@ export const FloopWidgetRating = ({
     };
 
     try {
-      await fetch('https://floop-git-develop-damiensedgwick.vercel.app/submissions/ratings', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
+      await fetch(
+        'https://floop-git-develop-damiensedgwick.vercel.app/submissions/ratings',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+      );
 
       setSubmitting(false);
       setWidgetType('default');
@@ -92,34 +99,45 @@ export const FloopWidgetRating = ({
       ) : (
         <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
           <label htmlFor='rating' style={label}>
-            <span style={{...span, marginBottom: "5px"}}>Rating us out of 10</span>
-           <select style={input}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-             <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8" selected>8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-           </select>
+            <select style={input}>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8' selected>
+                8
+              </option>
+              <option value='9'>9</option>
+              <option value='10'>10</option>
+            </select>
+            <p style={chars}>
+              <small>Rating out of 10</small>
+            </p>
           </label>
           <label htmlFor='message' style={label}>
             <textarea
               name='message'
               placeholder='Why did you give this rating?'
               style={textarea}
+              onChange={(e) => setDetailsCount(e.target.value.length)}
+              maxLength={150}
             ></textarea>
+            <p style={chars}>
+              <small>{detailsCount}&nbsp;/&nbsp;150</small>
+            </p>
           </label>
-          <button type='submit' style={submit}>
-            <small>Submit</small>
-          </button>
+
+          <div style={ff}>
+            <FloopWidgetFooter />
+            <button type='submit' style={submit}>
+              <small>Submit</small>
+            </button>
+          </div>
         </form>
       )}
-
-      <FloopWidgetFooter />
     </div>
   );
 };

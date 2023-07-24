@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.25
+
+### Patch Changes
+
+- bc609d9: Added char count for text inputs
+
 ## 0.0.24
 
 ### Patch Changes

@@ -99,7 +99,7 @@ export const FloopWidgetRating = ({
       ) : (
         <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
           <label htmlFor='rating' style={label}>
-            <select style={input}>
+            <select style={input} name='rating'>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>

@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.26
+
+### Patch Changes
+
+- fe43867: Added missing rating name
+
 ## 0.0.25
 
 ### Patch Changes

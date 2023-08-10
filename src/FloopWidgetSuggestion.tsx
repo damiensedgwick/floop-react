@@ -50,17 +50,14 @@ export const FloopWidgetSuggestion = ({
     };
 
     try {
-      await fetch(
-        'https://floop-git-develop-damiensedgwick.vercel.app/submissions/suggestions',
-        {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        }
-      );
+      await fetch('https://feedback-loop.io/submissions/suggestions', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
 
       setSubmitting(false);
       setWidgetType('default');

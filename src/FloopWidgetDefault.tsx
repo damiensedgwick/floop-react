@@ -1,11 +1,11 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { WidgetType } from './types';
-import ExclamationTriangleIcon from '@heroicons/react/24/outline/ExclamationTriangleIcon';
-import StarIcon from '@heroicons/react/24/outline/StarIcon';
-import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
-import LightBulbIcon from '@heroicons/react/24/outline/LightBulbIcon';
+import { LightBulbIcon } from './LightBulbIcon';
+import { XMarkIcon } from './XMarkIcon';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
 import { button, buttons, content, text, title } from './styles';
+import { ExclamationTriangleIcon } from './ExclamationTriangleIcon';
+import { StarIcon } from './StarIcon';
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -17,11 +17,7 @@ export const FloopWidgetDefault = ({ setShowWidget, setWidgetType }: Props) => {
     <div style={content}>
       <div style={title}>
         <p style={text}>What would you like to say?</p>
-        <XMarkIcon
-          width={20}
-          height={20}
-          onClick={() => setShowWidget(false)}
-        />
+        <XMarkIcon onClick={() => setShowWidget(false)} />
       </div>
 
       <div style={buttons}>
@@ -29,21 +25,21 @@ export const FloopWidgetDefault = ({ setShowWidget, setWidgetType }: Props) => {
           style={{ ...button, background: '#f0fdf4' }}
           onClick={() => setWidgetType('rating')}
         >
-          <StarIcon width={40} height={40} />
+          <StarIcon />
           <small>Rating</small>
         </button>
         <button
           style={{ ...button, background: '#fef2f2' }}
           onClick={() => setWidgetType('issue')}
         >
-          <ExclamationTriangleIcon width={40} height={40} />
+          <ExclamationTriangleIcon />
           <small>issue</small>
         </button>
         <button
           style={{ ...button, background: '#fefce8' }}
           onClick={() => setWidgetType('suggestion')}
         >
-          <LightBulbIcon width={40} height={40} />
+          <LightBulbIcon />
           <small>suggestion</small>
         </button>
       </div>

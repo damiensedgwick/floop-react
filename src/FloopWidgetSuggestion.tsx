@@ -1,6 +1,6 @@
 import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
-import ArrowLeftIcon from '@heroicons/react/24/outline/ArrowLeftIcon';
-import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
+import { ArrowLeftIcon } from './ArrowLeftIcon';
+import { XMarkIcon } from './XMarkIcon';
 import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
 import {
@@ -71,15 +71,9 @@ export const FloopWidgetSuggestion = ({
   return (
     <div style={content}>
       <div style={title}>
-        <ArrowLeftIcon
-          width={20}
-          height={20}
-          onClick={() => setWidgetType('default')}
-        />
+        <ArrowLeftIcon onClick={() => setWidgetType('default')} />
         <p style={text}>Share your idea</p>
         <XMarkIcon
-          width={20}
-          height={20}
           onClick={() => {
             setWidgetType('default');
             setShowWidget(false);

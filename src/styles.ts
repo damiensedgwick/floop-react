@@ -11,7 +11,7 @@ export const widget = {
   position: 'absolute',
   top: '25px',
   width: '300px',
-  height: '200px',
+  height: '225px',
   padding: '12px',
   borderRadius: '16px',
   fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',

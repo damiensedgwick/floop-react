@@ -1,5 +1,6 @@
 import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
-import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import ArrowLeftIcon from '@heroicons/react/24/outline/ArrowLeftIcon';
+import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { WidgetType } from './types';
 import { FloopWidgetFooter } from './FloopWidgetFooter';
 import {

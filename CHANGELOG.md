@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.27
+
+### Patch Changes
+
+- 9eb1223: added correct url
+
 ## 0.0.26
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.28
+
+### Patch Changes
+
+- 4a82b8d: changed icon imports to absolute paths
+
 ## 0.0.27
 
 ### Patch Changes

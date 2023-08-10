@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.30
+
+### Patch Changes
+
+- 8a565ee: Replaced heroicons with SVGs
+
 ## 0.0.29
 
 ### Patch Changes

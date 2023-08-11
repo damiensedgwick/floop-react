@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.31
+
+### Patch Changes
+
+- 10883f3: Added colour properties to css objs
+
 ## 0.0.30
 
 ### Patch Changes

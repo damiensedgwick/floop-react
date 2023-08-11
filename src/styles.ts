@@ -111,6 +111,7 @@ export const input = {
   fontSize: '12px',
   fontWeight: 'normal',
   color: '#1a202c',
+  background: '#ffffff',
 } as CSSProperties;
 
 export const textarea = {
@@ -123,6 +124,7 @@ export const textarea = {
   fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
   fontSize: '12px',
   fontWeight: 'normal',
+  background: '#ffffff',
   color: '#1a202c',
 } as CSSProperties;
 

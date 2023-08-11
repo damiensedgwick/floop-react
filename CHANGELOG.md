@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.32
+
+### Patch Changes
+
+- 0cd8e3e: added background colour to inputs
+
 ## 0.0.31
 
 ### Patch Changes

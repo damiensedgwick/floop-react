@@ -28,6 +28,7 @@ export const content = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const title = {
@@ -36,17 +37,20 @@ export const title = {
   justifyContent: 'space-between',
   fontSize: '16px',
   fontWeight: 'bold',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const text = {
   margin: '0',
   padding: '0',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const buttons = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const button = {
@@ -62,6 +66,7 @@ export const button = {
   boxShadow:
     'rgba(50, 50, 93, 0.15) 0 2px 4px -1px, rgba(0, 0, 0, 0.1) 0 1px 2px -1px',
   background: 'none',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const form = {
@@ -80,25 +85,20 @@ export const rating = {
   boxSizing: 'border-box',
   fontSize: '12px',
   fontWeight: 'normal',
-} as CSSProperties;
-
-export const span = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '6px',
-  fontSize: '12px',
-  fontWeight: 'normal',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const label = {
   width: '100%',
   borderRadius: '8px',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const chars = {
   margin: '0',
   padding: '0',
   textAlign: 'right',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const input = {
@@ -110,6 +110,7 @@ export const input = {
   fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
   fontSize: '12px',
   fontWeight: 'normal',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const textarea = {
@@ -122,6 +123,7 @@ export const textarea = {
   fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
   fontSize: '12px',
   fontWeight: 'normal',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const submit = {
@@ -136,6 +138,7 @@ export const submit = {
   background: 'none',
   fontSize: '12px',
   fontWeight: 'normal',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const ff = {
@@ -143,6 +146,7 @@ export const ff = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  color: '#1a202c',
 } as CSSProperties;
 
 export const footer = {

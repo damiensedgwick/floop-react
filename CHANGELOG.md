@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.33
+
+### Patch Changes
+
+- 2c05710: Updated widget to use floating ui
+
 ## 0.0.32
 
 ### Patch Changes

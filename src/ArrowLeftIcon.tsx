@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type Props = {
   onClick: () => void;
@@ -7,20 +7,20 @@ type Props = {
 export const ArrowLeftIcon = ({ onClick }: Props) => {
   return (
     <svg
-      xmlns='http://www.w3.org/2000/svg'
-      fill='none'
-      viewBox='0 0 24 24'
-      strokeWidth='1.5'
-      stroke='currentColor'
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
       width={20}
       height={20}
       onClick={onClick}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: "pointer" }}
     >
       <path
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
       />
     </svg>
   );

@@ -1,8 +1,8 @@
-import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
-import { ArrowLeftIcon } from './ArrowLeftIcon';
-import { XMarkIcon } from './XMarkIcon';
-import { WidgetType } from './types';
-import { FloopWidgetFooter } from './FloopWidgetFooter';
+import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { ArrowLeftIcon } from "./ArrowLeftIcon";
+import { XMarkIcon } from "./XMarkIcon";
+import { WidgetType } from "./types";
+import { FloopWidgetFooter } from "./FloopWidgetFooter";
 import {
   chars,
   content,
@@ -14,7 +14,7 @@ import {
   text,
   textarea,
   title,
-} from './styles';
+} from "./styles";
 
 type Props = {
   setShowWidget: Dispatch<SetStateAction<boolean>>;
@@ -40,8 +40,8 @@ export const FloopWidgetSuggestion = ({
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    const title = formData.get('title');
-    const message = formData.get('message');
+    const title = formData.get("title");
+    const message = formData.get("message");
 
     const body = {
       title: title,
@@ -51,64 +51,66 @@ export const FloopWidgetSuggestion = ({
     };
 
     try {
-      await fetch('https://feedback-loop.io/submissions/suggestions', {
-        method: 'POST',
-        mode: 'no-cors',
+      await fetch("https://feedback-loop.io/submissions/suggestions", {
+        method: "POST",
+        mode: "no-cors",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(body),
       });
 
       setSubmitting(false);
-      setWidgetType('default');
+      setWidgetType("default");
       setShowWidget(false);
     } catch (error) {
-      console.log('Error sending rating: ', error);
+      console.log("Error sending rating: ", error);
     }
   };
 
   return (
     <div style={content}>
       <div style={title}>
-        <ArrowLeftIcon onClick={() => setWidgetType('default')} />
+        <ArrowLeftIcon onClick={() => setWidgetType("default")} />
         <p style={text}>Share your idea</p>
         <XMarkIcon
           onClick={() => {
-            setWidgetType('default');
+            setWidgetType("default");
             setShowWidget(false);
           }}
         />
       </div>
       {submitting ? (
         <p
-          style={{ fontWeight: 'bold', textAlign: 'center', fontSize: '14px' }}
+          style={{ fontWeight: "bold", textAlign: "center", fontSize: "14px" }}
         >
           Submitting suggestion...
         </p>
       ) : (
         <form onSubmit={(e) => handleRatingSubmit(e)} style={form}>
-          <label htmlFor='title' style={label}>
+          <label htmlFor="title" style={label}>
             <input
-              type='text'
-              name='title'
+              type="text"
+              name="title"
               style={input}
-              placeholder='What is your suggestion?'
+              placeholder="What is your suggestion?"
               required
               onChange={(e) => setTitleCount(e.target.value.length)}
               maxLength={75}
+              id="title"
             />
             <p style={chars}>
               <small>{titleCount}&nbsp;/&nbsp;75</small>
             </p>
           </label>
-          <label htmlFor='message' style={label}>
+          <label htmlFor="message" style={label}>
             <textarea
-              name='message'
-              placeholder='Do you want to share any more details?'
+              name="message"
+              placeholder="Do you want to share any more details?"
               style={textarea}
               onChange={(e) => setDetailsCount(e.target.value.length)}
               maxLength={150}
+              id="message"
             ></textarea>
             <p style={chars}>
               <small>{detailsCount}&nbsp;/&nbsp;150</small>
@@ -117,7 +119,7 @@ export const FloopWidgetSuggestion = ({
 
           <div style={ff}>
             <FloopWidgetFooter />
-            <button type='submit' style={submit}>
+            <button type="submit" style={submit}>
               <small>Submit</small>
             </button>
           </div>

@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.35
+
+### Patch Changes
+
+- 69ce3bd: added z index to widget
+
 ## 0.0.34
 
 ### Patch Changes

@@ -18,16 +18,45 @@ The Floop widget for React apps.
 
 ### Use the Floop widget within your code
 
-```tsx
-import { FloopWidget } from "@feedback-loop/react"
+You can use the widget straight from installation, however, if you want to apply
+your own styles to the trigger, which is left intentionally bare, we suggest you
+create a wrapper so you can style it to your needs.
 
-export const MyComponent = () => {
+The React Floop Widget is used on our own dashboard, below is the exact code we
+are using to import and use the widget.
+
+```tsx
+"use client";
+
+import { FloopWidget } from "@feedback-loop/react";
+import { buttonVariants } from "@/components/ui/button";
+
+type Props = {
+  projectId: string;
+  userEmail: string;
+};
+
+export const FloopWidgetButton = ({ projectId, userEmail }: Props) => {
   return (
-    <FloopWidget projectId="..." userEmail="...">
-      <button>Give feedback</button>
+    <FloopWidget projectId={projectId} userEmail={userEmail}>
+      <span className={buttonVariants({ variant: "themed" })}>
+        Give Feedback
+      </span>
     </FloopWidget>
   );
-};
+}
+```
+
+We have also included the following data attributes so that you are able to
+easily locate either the trigger, or the widget. This is to help aid you, should
+you want to either add or change some of the styling or for testing.
+
+```
+data-floop-widget="widget-trigger" 
+```
+
+```
+data-floop-widget="widget-popup"
 ```
 
 ## License

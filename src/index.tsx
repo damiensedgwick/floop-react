@@ -69,7 +69,7 @@ export const FloopWidget = ({ projectId, userEmail, children }: Props) => {
           <div
             className="Popover"
             ref={refs.setFloating}
-            style={floatingStyles}
+            style={{ ...floatingStyles, zIndex: 41189 }}
             aria-labelledby={headingId}
             {...getFloatingProps()}
           >

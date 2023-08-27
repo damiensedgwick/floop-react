@@ -1,62 +1,115 @@
-import React, { ReactNode, useState } from 'react';
-import { FloopWidgetDefault } from './FloopWidgetDefault';
-import { widget, wrapper } from './styles';
-import { FloopWidgetRating } from './FloopWidgetRating';
-import { FloopWidgetIssue } from './FloopWidgetIssue';
-import { FloopWidgetSuggestion } from './FloopWidgetSuggestion';
-import { WidgetType } from './types';
+import React from "react";
+import {
+  useFloating,
+  autoUpdate,
+  offset,
+  flip,
+  shift,
+  useDismiss,
+  useRole,
+  useClick,
+  useInteractions,
+  FloatingFocusManager,
+  useId,
+} from "@floating-ui/react";
+import { FloopWidgetDefault } from "./FloopWidgetDefault";
+import { FloopWidgetRating } from "./FloopWidgetRating";
+import { FloopWidgetIssue } from "./FloopWidgetIssue";
+import { FloopWidgetSuggestion } from "./FloopWidgetSuggestion";
+import { widget } from "./styles";
 
-type Props = {
+interface Props {
+  triggerText: string;
   projectId: string;
   userEmail: string;
-  children: ReactNode;
-};
+}
 
-export const FloopWidget = ({ projectId, userEmail, children }: Props) => {
-  const [showWidget, setShowWidget] = useState(false);
-  const [widgetType, setWidgetType] = useState<WidgetType>('default');
+export const FloopWidget = ({ triggerText, projectId, userEmail }: Props) => {
+  const [showWidget, setShowWidget] = React.useState(false);
+  const [widgetType, setWidgetType] = React.useState<
+    "default" | "rating" | "issue" | "suggestion"
+  >("default");
+
+  const { refs, floatingStyles, context } = useFloating({
+    open: showWidget,
+    onOpenChange: setShowWidget,
+    middleware: [
+      offset(10),
+      flip({ fallbackAxisSideDirection: "end" }),
+      shift(),
+    ],
+    whileElementsMounted: autoUpdate,
+  });
+
+  const click = useClick(context);
+  const dismiss = useDismiss(context);
+  const role = useRole(context);
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    dismiss,
+    role,
+  ]);
+
+  const headingId = useId();
 
   return (
-    <div style={wrapper}>
-      <span onClick={() => setShowWidget(!showWidget)}>{children}</span>
+    <>
+      <button
+        ref={refs.setReference}
+        {...getReferenceProps()}
+        data-floop-widget="widget-trigger"
+      >
+        {triggerText}
+      </button>
 
-      {showWidget ? (
-        <div style={{ ...widget, left: '50%', transform: 'translateX(-50%)' }}>
-          {widgetType === 'default' ? (
-            <FloopWidgetDefault
-              setWidgetType={setWidgetType}
-              setShowWidget={setShowWidget}
-            />
-          ) : null}
+      {showWidget && (
+        <FloatingFocusManager context={context} modal={false}>
+          <div
+            className="Popover"
+            ref={refs.setFloating}
+            style={floatingStyles}
+            aria-labelledby={headingId}
+            {...getFloatingProps()}
+          >
+            <div style={widget} data-floop-widget="widget-popup">
+              {widgetType === "default" ? (
+                <FloopWidgetDefault
+                  setWidgetType={setWidgetType}
+                  setShowWidget={setShowWidget}
+                />
+              ) : null}
 
-          {widgetType === 'rating' ? (
-            <FloopWidgetRating
-              setWidgetType={setWidgetType}
-              setShowWidget={setShowWidget}
-              projectId={projectId}
-              userEmail={userEmail}
-            />
-          ) : null}
+              {widgetType === "rating" ? (
+                <FloopWidgetRating
+                  setWidgetType={setWidgetType}
+                  setShowWidget={setShowWidget}
+                  projectId={projectId}
+                  userEmail={userEmail}
+                />
+              ) : null}
 
-          {widgetType === 'issue' ? (
-            <FloopWidgetIssue
-              setWidgetType={setWidgetType}
-              setShowWidget={setShowWidget}
-              projectId={projectId}
-              userEmail={userEmail}
-            />
-          ) : null}
+              {widgetType === "issue" ? (
+                <FloopWidgetIssue
+                  setWidgetType={setWidgetType}
+                  setShowWidget={setShowWidget}
+                  projectId={projectId}
+                  userEmail={userEmail}
+                />
+              ) : null}
 
-          {widgetType === 'suggestion' ? (
-            <FloopWidgetSuggestion
-              setWidgetType={setWidgetType}
-              setShowWidget={setShowWidget}
-              projectId={projectId}
-              userEmail={userEmail}
-            />
-          ) : null}
-        </div>
-      ) : null}
-    </div>
+              {widgetType === "suggestion" ? (
+                <FloopWidgetSuggestion
+                  setWidgetType={setWidgetType}
+                  setShowWidget={setShowWidget}
+                  projectId={projectId}
+                  userEmail={userEmail}
+                />
+              ) : null}
+            </div>
+          </div>
+        </FloatingFocusManager>
+      )}
+    </>
   );
 };

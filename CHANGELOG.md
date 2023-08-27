@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.0.0
+
+### Major Changes
+
+- e8b51e7: V1 Release
+
 ## 0.0.35
 
 ### Patch Changes

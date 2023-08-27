@@ -16,15 +16,15 @@ import { FloopWidgetDefault } from "./FloopWidgetDefault";
 import { FloopWidgetRating } from "./FloopWidgetRating";
 import { FloopWidgetIssue } from "./FloopWidgetIssue";
 import { FloopWidgetSuggestion } from "./FloopWidgetSuggestion";
-import { widget } from "./styles";
+import { widget, trigger } from "./styles";
 
 interface Props {
-  triggerText: string;
   projectId: string;
   userEmail: string;
+  children: React.ReactNode;
 }
 
-export const FloopWidget = ({ triggerText, projectId, userEmail }: Props) => {
+export const FloopWidget = ({ projectId, userEmail, children }: Props) => {
   const [showWidget, setShowWidget] = React.useState(false);
   const [widgetType, setWidgetType] = React.useState<
     "default" | "rating" | "issue" | "suggestion"
@@ -58,9 +58,10 @@ export const FloopWidget = ({ triggerText, projectId, userEmail }: Props) => {
       <button
         ref={refs.setReference}
         {...getReferenceProps()}
+        style={trigger}
         data-floop-widget="widget-trigger"
       >
-        {triggerText}
+        {children}
       </button>
 
       {showWidget && (

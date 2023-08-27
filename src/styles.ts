@@ -1,5 +1,11 @@
 import { CSSProperties } from "react";
 
+export const trigger = {
+  padding: "0",
+  background: "none",
+  border: "none",
+} as CSSProperties;
+
 export const widget = {
   padding: "12px",
   width: "300px",

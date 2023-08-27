@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 0.0.34
+
+### Patch Changes
+
+- bf06fbb: Increased widget height
+
 ## 0.0.33
 
 ### Patch Changes

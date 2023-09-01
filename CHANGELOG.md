@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.0.2
+
+### Patch Changes
+
+- 76d8205: Removed use client call
+
 ## 1.0.1
 
 ### Patch Changes

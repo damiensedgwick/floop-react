@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.0.1
+
+### Patch Changes
+
+- 2274db7: Added use client to top of export file
+
 ## 1.0.0
 
 ### Major Changes

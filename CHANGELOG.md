@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.0.3
+
+### Patch Changes
+
+- 2e75583: removed size adjustment on textarea
+
 ## 1.0.2
 
 ### Patch Changes

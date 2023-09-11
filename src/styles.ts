@@ -123,6 +123,7 @@ export const textarea = {
   fontWeight: "normal",
   background: "#ffffff",
   color: "#1a202c",
+  resize: "none",
 } as CSSProperties;
 
 export const submit = {

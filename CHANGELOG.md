@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.1.0
+
+### Minor Changes
+
+- 32f5b6f: added navigator.userAgent to issue submissions
+
 ## 1.0.3
 
 ### Patch Changes

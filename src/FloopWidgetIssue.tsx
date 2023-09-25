@@ -48,6 +48,7 @@ export const FloopWidgetIssue = ({
       details: message,
       project_id: projectId,
       user_email: userEmail,
+      browser_metadata: navigator.userAgent
     };
 
     try {

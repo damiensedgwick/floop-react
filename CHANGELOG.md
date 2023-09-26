@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.2.0
+
+### Minor Changes
+
+- 724aafe: reverted collection of browser metadata
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.2.1
+
+### Patch Changes
+
+- a585bf2: improved ux on submissions
+
 ## 1.2.0
 
 ### Minor Changes

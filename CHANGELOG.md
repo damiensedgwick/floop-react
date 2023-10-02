@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.2.4
+
+### Patch Changes
+
+- 03e0462: increased margin on success ui
+
 ## 1.2.3
 
 ### Patch Changes

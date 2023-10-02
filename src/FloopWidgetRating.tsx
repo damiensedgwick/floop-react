@@ -114,6 +114,7 @@ export const FloopWidgetRating = ({
               fontWeight: "bold",
               textAlign: "center",
               fontSize: "14px",
+              margin: "10px auto",
             }}
           >
             Thanks, feedback received!

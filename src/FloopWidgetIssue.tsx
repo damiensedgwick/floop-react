@@ -66,7 +66,7 @@ export const FloopWidgetIssue = ({
         }
       );
 
-      if (response.status === 200) {
+      if (response.ok) {
         setSuccess(true);
         setSubmitting(false);
       }

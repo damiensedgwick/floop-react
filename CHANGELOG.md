@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.2.3
+
+### Patch Changes
+
+- 80709ea: removed status check
+
 ## 1.2.2
 
 ### Patch Changes

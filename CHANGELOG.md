@@ -1,5 +1,11 @@
 # @feedback-loop/react-widget
 
+## 1.2.2
+
+### Patch Changes
+
+- cf9703e: change status check on response
+
 ## 1.2.1
 
 ### Patch Changes

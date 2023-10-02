@@ -53,22 +53,17 @@ export const FloopWidgetRating = ({
     };
 
     try {
-      const response = await fetch(
-        "https://feedback-loop.io/submissions/ratings",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        }
-      );
+      await fetch("https://feedback-loop.io/submissions/ratings", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
 
-      if (response.ok) {
-        setSuccess(true);
-        setSubmitting(false);
-      }
+      setSuccess(true);
+      setSubmitting(false);
 
       setTimeout(() => {
         setWidgetType("default");

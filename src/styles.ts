@@ -162,3 +162,16 @@ export const branding = {
   fontWeight: "bold",
   textDecoration: "none",
 } as CSSProperties;
+
+export const giveMoreButton = {
+  padding: "6px",
+  width: "100%",
+  maxWidth: "200px",
+  margin: "0 auto",
+  background: "#ffffff",
+  border: "1px solid #e2e8f0",
+  borderRadius: "8px",
+  cursor: "pointer",
+  boxShadow:
+    "rgba(50, 50, 93, 0.15) 0 2px 4px -1px, rgba(0, 0, 0, 0.1) 0 1px 2px -1px",
+} as CSSProperties;
